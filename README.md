@@ -8,7 +8,7 @@ Engine using a Custom Erlang Runtime*
 
 This repo will be featured in an up-coming
 [LFE blog post](http://blog.lfe.io/tutorials/)
-about running LFE and LFE apps on Google App Engine containers.
+about running LFE and LFE apps on Google App Engine using Docker containers.
 
 ## Use
 
