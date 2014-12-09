@@ -30,3 +30,13 @@
 (defun clean-up (arg-data)
   "A function to call once GAE is shutting down the container."
   (io:format "Cleaning up, now that GAE is shutting down the container ...~n"))
+
+(defun health (arg-data)
+  "GAE makes /_ah/health requests on a periodic basis to determine the
+  operational status of an app. This function is intended to be called (as
+  configured in the routes module) when that URL is requested.
+
+  For more details, see the following:
+    https://cloud.google.com/appengine/docs/python/managed-vms/#health_checking"
+  (io:format "Got health request ...~n")
+  (lfest-text-resp:ok))

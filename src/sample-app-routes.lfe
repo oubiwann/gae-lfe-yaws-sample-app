@@ -15,6 +15,8 @@
     (sample-app-gae:start arg-data))
   ('GET "/_ah/stop"
     (sample-app-gae:stop arg-data))
+  ('GET "/_ah/health"
+    (sample-app-gae:health arg-data))
   ;; When nothing matches, do this
   ('NOTFOUND
    (let* ((joined-path (++ "/" (string:join path "/")))
