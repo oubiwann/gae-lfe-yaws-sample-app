@@ -15,7 +15,7 @@
 
 (defun set-up (arg-data)
   "A function to call once GAE is ready."
-  (io:format "Setting up app, now that GAE is ready ...~n"))
+  (sample-app-log:info "Setting up app, now that GAE is ready ...~n"))
 
 (defun stop (arg-data)
   "This function is intended to be called (as configured in the routes
@@ -29,7 +29,8 @@
 
 (defun clean-up (arg-data)
   "A function to call once GAE is shutting down the container."
-  (io:format "Cleaning up, now that GAE is shutting down the container ...~n"))
+  (sample-app-log:info
+    "Cleaning up, now that GAE is shutting down the container ...~n"))
 
 (defun health (arg-data)
   "GAE makes /_ah/health requests on a periodic basis to determine the
@@ -38,5 +39,5 @@
 
   For more details, see the following:
     https://cloud.google.com/appengine/docs/python/managed-vms/#health_checking"
-  (io:format "Got health request ...~n")
+  (sample-app-log:info "Got health request ...~n")
   (lfest-text-resp:ok))
