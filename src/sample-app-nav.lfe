@@ -9,9 +9,9 @@
     (li (a '(href "/content/1") "/content/1"))
     (li (a '(href "/content/2") "/content/2"))
     (li (a '(href "/content/3") "/content/3"))
-    (li
-      (list
-        (a '(href "/relation/1/2") "/relation/1/2")))
+    (li (a '(href "/relation/1/2") "/relation/1/2"))
+    (li (a '(href "/_ah/start") "GAE Start"))
+    (li (a '(href "/_ah/stop") "GAE Stop"))
     (li (a '(href "/bob") "404"))))
 
 (defun get-navbar()
