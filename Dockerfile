@@ -2,6 +2,8 @@ FROM lfex/lfe
 
 ENV APP_DIR /opt/sample-app
 ENV APP_REPO https://github.com/oubiwann/gae-lfe-yaws-sample-app.git
+ENV APP_LOG_DIR /var/log/app_engine/custom_logs
+
 ENV DEPS_DIR $APP_DIR/deps
 ENV YAWS_DIR $DEPS_DIR/yaws
 ENV YAWS_APP_ID sampleapp
@@ -15,6 +17,8 @@ RUN apt-get update && apt-get install -y \
 RUN git clone $APP_REPO $APP_DIR && \
         cd $APP_DIR && \
         rebar compile
+
+RUN mkdir -p $APP_LOG_DIR
 
 EXPOSE 5099
 
